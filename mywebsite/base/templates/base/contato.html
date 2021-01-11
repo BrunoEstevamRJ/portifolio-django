@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev. Bruno Estevam</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    {% load static %}
+
+    <link href="{% static 'main.css'  %}" rel="stylesheet" type="text/css">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#7952b3">
+
+</head>
+
+<body>
+
+    <div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">Meu Portifolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contato' %}">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="container contact-form">
+        <h1>Contato</h1>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>Bruno Estevam</p>
+                <p>Email:- bruno.estevam@outlook.com.br</p>
+                <p>Phone: (21) 981892666  -  (21) 970124675</p>
+
+                {% comment %} <img src="static/stripe-hero.jpeg" alt="some text" width=500 height=400> {% endcomment %}
+                {%comment%}<img src="{% static 'BrunoEstevam.png' %}" class="img-fluid" alt="Imagem responsiva">{%endcomment%}
+
+            </div>
+
+            <div class="col-md-6">
+
+                <form id="formulario" method='POST'>
+                    {% csrf_token %}
+
+
+                    <label for="">Nome</label>
+                    <input type="text" name="name" class="form-control" placeholder="Digite Seu Nome" id="nomeCliente">
+
+                    <label for="">Telefone</label>
+                    <input type="text" name="telefone" class="form-control" placeholder="Digite Seu Telefone" id="telefoneCliente">
+
+                    <label for="">Email</label>
+                    <input type="text" name="email" class="form-control" placeholder="Digite Seu Email" id="emailCliente">
+
+                    <label for="">Menssagem</label>
+                    <textarea class="form-control" name="menssagem" rows="7" placeholder="Se preferir, deixe aqui sua menssagem..." id="msgCliente"></textarea>
+                    <br>
+                    <!-- <input class="btn btn-primary btn-block" type="button" name="submit" value="Enviar" /> -->
+                    <button class="btn btn-primary btn-block" type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% comment %} <img src="static/back.jpeg" alt="some text" width=300 height=200> {% endcomment %}
+
+    
+    <style>
+        body {
+            background-image: url({% static 'background.jpg' %});
+            background-size: cover;
+        }
+
+        hr {
+            background: white;
+        }
+
+        .contact-form {
+            background: rgba(0, 0, 0, .6);
+            color: white;
+            margin-top: 100px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 3px grey;
+        }
+    </style> 
+    
+    
+
+    <script>
+
+        {% comment %}
+        document.getElementById('formulario').addEventListener('submit', agradecer);
+        function agradecer(e) {
+            alert("Obrigado " + nome + "\n Contato Salvo!");
+        }
+
+        document.getElementById('formulario').addEventListener('submit', cadastraCliente);
+
+        function cadastraCliente(e) {
+            var nome = document.getElementById('nomeCliente').value;
+            var telefone = document.getElementById('telefoneCliente').value;
+            var email = document.getElementById('emailCliente').value;
+            var menssaem = document.getElementById('msgCliente').value;
+            var time = new Date();
+
+            alert("Obrigado " + nome + "\n Contato Salvo!");
+
+            cliente = {
+                nome: nomeCliente,
+                telefone: telefoneCliente,
+                email: emailCliente,
+                hora: time.getHours(),
+                minutos: time.getMinutes(),
+            }
+
+            if (localStorage.getItem('cadastro2') == null) {
+                var clientes = [];
+                clientes.push(clientes);
+                localStorage.setItem('cadastro2', JSON.stringify(clientes));
+            } else {
+                var clientes = JSON.parse(localStorage.getItem('cadastro2'));
+                clientes.push(cliente);
+                localStorage.setItem('cadastro2', JSON.stringfy(clientes));
+            }
+
+            e.preventDefault();
+        } {% endcomment %}
+
+    </script>
+
+</body>
+{% comment %}
+
+Dev: Bruno Estevam
+GitHub: https://github.com/BrunoEstevamRJ
+LinkedIn: linkedin.com/in/bruno-estevam-63358b196
+
+{% endcomment %}
+</html>

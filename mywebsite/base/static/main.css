@@ -1,5 +1,6 @@
 body {
-    background-color: #F8F8F8 !important;
+    background-image: url({% static 'background.jpg' %});
+    background-size: cover;
 }
 
 #profile-wrapper {
