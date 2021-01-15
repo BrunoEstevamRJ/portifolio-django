@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev. Bruno Estevam</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/"
+
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -14,7 +17,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+    
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -50,121 +53,127 @@
 
 </head>
 <body>
-    <div>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}">Meu Portifólio</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'contato' %}">Contato</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container-fluid" id="navbarsExempleDefault">
+            <a class="navbar-brand" href="{% url 'home' %}">Meu Portifólio</a>
 
-    <br><br /><br />
-   
 
-  
-  
-        
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card card-body h-100  border-info" id="profile-wrapper">
-                        <img id="profile-pic" src="{% static 'BrunoEstevam.jpg' %}">
-                        <hr>
-                        <h4>Hi I'm Bruno!</h4>
-                        <p>I love coding, doing research and collaborating</p>
-                    </div>
-                </div>
 
-                <div class="col-md-9">
-                    <div class="card card-body h-100  border-info">
-                        <h4>Minha trajetória como desenvolvedor</h4>
-                        <hr>
-                        <p>Desde sempre tive facilidade com programação, porém eu nunca tentei nada profissional</p>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'contato' %}">Contato <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
 
-                        <p>Desenvolvia aplicações em C# desktop para eu mesmo e amigos.</p>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        <p>Mas a partir de 2018, retomei os estudos com o objetivo de dominar o desenvolvimento web.</p>
-
-                        <p>Realizei alguns projetos para profissionais locais de outras áreas e assim obtendo experiência.</p>
-
-                        <ul class="social-links">
-                            <a href="https://www.facebook.com/bruno.estevam.9469">
-                                <li><img class="social" src="{% static 'facebook.png' %}"></li>
-                            </a>
-                            <a href="https://www.linkedin.com/in/bruno-estevam-63358b196/">
-                                <li><img class="social" src="{% static 'linkedin.png' %}"></li>
-                            </a>
-                            <a href="https://twitter.com/BrunoooEstevam">
-                                <li><img class="social" src="{% static 'twitter.png' %}"></li>
-                            </a>
-                            <a href="https://github.com/BrunoEstevamRJ">
-                                <li><img class="social" src="{% static 'GitHub.png' %}"></li>
-                            </a>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card card-body h-100">
-                        <h5>Minha experiência como Desenvolvedor</h5>
-                        <hr>
-                        <p>Dev Full stack</p>
-                        <p>Desenvolvo APIs e websites utilizando o Framework Django</p>
-                        <p>Atualmente estudo ReactJS e VUE para utilizar no frontend</p>
-                        
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card card-body h-100">
-                        <h5>Meus conhecimentos</h5>
-                        <hr>
-                        <p>Python, Django, Java, Spring, C#, Javascript, ExpressJS HTML/CSS, JavaScript, React/VUE, Postgres, MySQL, SLQ Server</p>
-                        <p>PS: Working on ASP.Net and Machine Learning.</p>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card card-body h-100">
-                        <h5>How I Learn</h5>
-                        <hr>
-                        <p>Engenharia reversa & Construir Protótipos a fim de melhora-los com o tempo.</p>
-
-                        <p>Posso aprender quase tudo tendo um produto final para desmonta-lo peça por peça. Eu quebro o código onde preciso descobrir por que as coisas funcionam da maneira que funcionam. E uso a documentação como referência.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card card-body h-100">
-                        <h5>Minhas metas de curto prazo</h5>
-                        <hr>
-                        <p>Depois de 2 anos desenvolvendo sistemas web, rest api e websites, estou pronto para aprender algo novo.</p>
-                        <p>Além de construir pequenos projetos, adoraria entrar em uma posição onde possofazer parte de uma equipe maior e aprender com outras pessoas mais experientes.</p>
-
-                    </div>
-                </div>
-            </div>
-            <br>
         </div>
 
-        <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    </body>
+    </nav>
 
+    
+
+
+
+        <br><br /><br />
+
+        <br>
+        <main role="main" class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card card-body h-100  border-info" id="profile-wrapper">
+                            <img id="profile-pic" src="{% static 'BrunoEstevam.jpg' %}">
+                            <hr>
+                            <h4>Hi I'm Bruno!</h4>
+                            <p>I love coding, doing research and collaborating</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="card card-body h-100  border-info">
+                            <h4>Minha trajetória como desenvolvedor</h4>
+                            <hr>
+                            <p>Desde sempre tive facilidade com programação, porém eu nunca tentei nada profissional.</p>
+
+                            <p>Desenvolvia aplicações em C# desktop para eu mesmo e amigos.</p>
+
+                            <p>Mas a partir de 2018, retomei os estudos com o objetivo de dominar o desenvolvimento web.</p>
+
+                            <p>Realizei alguns projetos para profissionais locais de outras áreas e assim obtendo experiência.</p>
+
+                            <ul class="social-links">
+                                <a href="https://www.facebook.com/bruno.estevam.9469">
+                                    <li><img class="social" src="{% static 'facebook.png' %}"></li>
+                                </a>
+                                <a href="https://www.linkedin.com/in/bruno-estevam-63358b196/">
+                                    <li><img class="social" src="{% static 'linkedin.png' %}"></li>
+                                </a>
+                                <a href="https://twitter.com/BrunoooEstevam">
+                                    <li><img class="social" src="{% static 'twitter.png' %}"></li>
+                                </a>
+                                <a href="https://github.com/BrunoEstevamRJ">
+                                    <li><img class="social" src="{% static 'GitHub.png' %}"></li>
+                                </a>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-body h-100">
+                            <h5>Minha experiência como Desenvolvedor</h5>
+                            <hr>
+                            <p>Dev Full stack</p>
+                            <p>Desenvolvo APIs e websites utilizando o Framework Django</p>
+                            <p>Atualmente estudo ReactJS e VUE para utilizar no frontend</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card card-body h-100">
+                            <h5>Meus conhecimentos</h5>
+                            <hr>
+                            <p>Python, Django, Java, Spring, C#, Javascript, ExpressJS HTML/CSS, JavaScript, React/VUE, Postgres, MySQL, SLQ Server</p>
+                            <p>PS: Working on ASP.Net and Machine Learning.</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-body h-100">
+                            <h5>Método de Estudo</h5>
+                            <hr>
+                            <p>Engenharia reversa & Construir Protótipos a fim de melhora-los com o tempo.</p>
+
+                            <p>Posso aprender quase tudo tendo um produto final para desmonta-lo peça por peça. Eu quebro o código onde preciso descobrir por que as coisas funcionam da maneira que funcionam. E uso a documentação como referência.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card card-body h-100">
+                            <h5>Minhas metas de curto prazo</h5>
+                            <hr>
+                            <p>Depois de 2 anos desenvolvendo sistemas web, rest api e websites, estou pronto para aprender algo novo.</p>
+                            <p>Além de construir pequenos projetos, adoraria entrar em uma posição onde possofazer parte de uma equipe maior e aprender com outras pessoas mais experientes.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </main>
+        <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+        <script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
 </html>
